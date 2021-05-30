@@ -142,7 +142,7 @@ EXPORT void CALL DllAbout(p_void hParent)
 
 EXPORT void CALL DllConfig(p_void hParent)
 {
-    system("sp_cfgui");
+    int result = system("sp_cfgui");
     update_conf(CFG_FILE);
 
     if (DMEM == IMEM || GET_RCP_REG(SP_PC_REG) % 4096 == 0x00000000)
@@ -424,7 +424,7 @@ NOINLINE void update_conf(const char* source)
         message("Failed to read config.");
         return;
     }
-    fread(conf, 8, 32 / 8, stream);
+    int result = fread(conf, 8, 32 / 8, stream);
     fclose(stream);
     return;
 }
