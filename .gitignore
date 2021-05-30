@@ -3,7 +3,7 @@
 
 *.o
 *.so
-obj
+build
 
 *.obj
 *.dll
