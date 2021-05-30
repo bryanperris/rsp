@@ -402,10 +402,7 @@ NOINLINE void message(const char* body)
     system(argv);
     free(argv);
 #else
-    fputs(body, stdout);
-    putchar('\n');
-    puts("Press ENTER to return.");
-    getchar();
+    printf("RSP PLUGIN: %s\n", body);
 #endif
     return;
 }
